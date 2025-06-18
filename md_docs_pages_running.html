@@ -65,14 +65,11 @@ $(function() {
   <div class="headertitle"><div class="title">Running PALM-meteo </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >When PALM-meteo is installed using Method 2 or Method 3, the main running script <code>pmeteo</code> is created in the installation directory. This script is executed as</p>
-<div class="fragment"><div class="line">./pmeteo {OPTIONS}</div>
-</div><!-- fragment --><p >When using Method 1 or Method 2, this command is also added to the system's <code>PATH</code> variable, which means that PALM-meteo can be also run as</p>
-<div class="fragment"><div class="line">pmeteo {OPTIONS}</div>
-</div><!-- fragment --><p >as long as the virtual environment (if used) is enabled.</p>
-<p >Finally, as a backup option if neither of the scripts is installed, the <code>palmmeteo</code> Python module can be executed using</p>
-<div class="fragment"><div class="line">python3 -m palmmeteo {OPTIONS}</div>
-</div><!-- fragment --><p >Here is the complete list of command line options:</p>
+<div class="textblock"><p >When PALM-meteo is installed using Method 2 or Method 3, the main running script <code>pmeteo</code> is created in the installation directory. This script is executed as </p><pre class="fragment">./pmeteo {OPTIONS}
+</pre><p> When using Method 1 or Method 2, this command is also added to the system's <code>PATH</code> variable, which means that PALM-meteo can be also run as </p><pre class="fragment">pmeteo {OPTIONS}
+</pre><p> as long as the virtual environment (if used) is enabled.</p>
+<p >Finally, as a backup option if neither of the scripts is installed, the <code>palmmeteo</code> Python module can be executed using </p><pre class="fragment">python3 -m palmmeteo {OPTIONS}
+</pre><p> Here is the complete list of command line options:</p>
 <pre class="fragment">usage: pmeteo [-h] -c CONFIG [CONFIG ...] [-w STAGE] [-W STAGE] [--version]
               [-v | -s]
 

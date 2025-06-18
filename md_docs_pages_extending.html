@@ -102,9 +102,8 @@ Implementing workflow items</h1>
 </ul>
 <h2><a class="anchor" id="autotoc_md21"></a>
 Accessing configuration</h2>
-<p >The final configuration based on default and user-configured values is accessible in the <code>cfg</code> object, which is best imported as</p>
-<div class="fragment"><div class="line">from palmmeteo.config import cfg</div>
-</div><!-- fragment --><p >This is an instance of the class <a class="el" href="classpalmmeteo_1_1config_1_1ConfigObj.html">palmmeteo.config.ConfigObj</a> and its configuration items may be accessed both with the attribute access (dot notation, e.g. <code>cfg.mysection.myoption</code>) and with the item access (bracket notation, e.g. <code>cfg.mysection["myoption"]</code>). It also supports iteration of key-value pairs and testing of item presence (e.g. <code>if "myoption" in cfg.mysection</code>).</p>
+<p >The final configuration based on default and user-configured values is accessible in the <code>cfg</code> object, which is best imported as </p><pre class="fragment">from palmmeteo.config import cfg
+</pre><p> This is an instance of the class <a class="el" href="classpalmmeteo_1_1config_1_1ConfigObj.html">palmmeteo.config.ConfigObj</a> and its configuration items may be accessed both with the attribute access (dot notation, e.g. <code>cfg.mysection.myoption</code>) and with the item access (bracket notation, e.g. <code>cfg.mysection["myoption"]</code>). It also supports iteration of key-value pairs and testing of item presence (e.g. <code>if "myoption" in cfg.mysection</code>).</p>
 <p >After the configuration is loaded, the <code>cfg</code> object is set as read-only.</p>
 <h2><a class="anchor" id="autotoc_md22"></a>
 Logging</h2>
@@ -118,9 +117,8 @@ Logging</h2>
 <p >All of these functions accept the message as their first argument and optional positional and/or keyword arguments which are used as formatting arguments. A newline is always added at the end.</p>
 <h2><a class="anchor" id="autotoc_md23"></a>
 Data persistence</h2>
-<p >PALM-meteo supports restarting individual workflow stages by storing the intermediate meteorological data in NetCDF files and other auxiliary data in pickle files. Any auxiliary data which need to persist from one stage to the following stages must be stored in the runtime object <code>rt</code> (instance of <a class="el" href="classpalmmeteo_1_1runtime_1_1RuntimeObj.html">palmmeteo.runtime.RuntimeObj</a>), which is imported as</p>
-<div class="fragment"><div class="line">from palmmeteo.runtime import rt</div>
-</div><!-- fragment --><p >The object supports attribute access (e.g. <code>rt.myvariable</code>).</p>
+<p >PALM-meteo supports restarting individual workflow stages by storing the intermediate meteorological data in NetCDF files and other auxiliary data in pickle files. Any auxiliary data which need to persist from one stage to the following stages must be stored in the runtime object <code>rt</code> (instance of <a class="el" href="classpalmmeteo_1_1runtime_1_1RuntimeObj.html">palmmeteo.runtime.RuntimeObj</a>), which is imported as </p><pre class="fragment">from palmmeteo.runtime import rt
+</pre><p> The object supports attribute access (e.g. <code>rt.myvariable</code>).</p>
 <p >Although the plugin objects themselves do persist between the stages of a single PALM-meteo execution, they are not stored for restarting of stages.</p>
 <p >The <code>rt</code> object is shared among all plugins and it is often used to exchange data among plugins. For other cases, plugin developers are encouraged to use names which are not likely to conflict with other plugins.</p>
 <p >Because the configured paths undergo processing after the configuration is loaded, the processed paths are accessible under <code>rt.paths</code>.</p>

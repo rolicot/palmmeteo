@@ -66,7 +66,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="mainpage"></a> PALM-meteo is an advanced and modular tool to create PALM's <em>dynamic driver</em> with initial and boundary conditions (IBC) and other time-varying data, typically using (but not limited to) outputs from mesoscale models. It is a successor to multiple older projects for PALM dynamic drivers, most importantly the deprecated <a href="https://gitlab.palm-model.org/dynamic_driver/wrf_interface">WRF-interface</a> project.</p>
-<p >The documentation to PALM-meteo is available at <a href="https://rolicot.github.io/palmmeteo/">https://rolicot.github.io/palmmeteo/</a>.</p>
+<p >The documentation for PALM-meteo is available at <a href="https://palm-tools.github.io/palmmeteo/">https://palm-tools.github.io/palmmeteo/</a>.</p>
 <h1><a class="anchor" id="autotoc_md0"></a>
 Functionality</h1>
 <p >The PALM-meteo workflow consists of these <em>stages</em>:</p>
@@ -105,9 +105,8 @@ Installation</h1>
 <p >There are three basic ways to install PALM-meteo.</p>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Method 1: Simple minimal installation using PIP</h2>
-<p >PALM-meteo is available in PyPI and it can be installed with the simple command:</p>
-<div class="fragment"><div class="line">pip3 install palmmeteo</div>
-</div><!-- fragment --><p >This will also install the <code>pmeteo</code> command for running PALM-meteo. Depending on your operating system and environment, you may want to create a virtual environment first, or use the <code>--user</code> option, or use <a href="https://pipx.pypa.io/">pipx</a> instead of pip.</p>
+<p >PALM-meteo is available in PyPI and it can be installed with the simple command: </p><pre class="fragment">pip3 install palmmeteo
+</pre><p> This will also install the <code>pmeteo</code> command for running PALM-meteo. Depending on your operating system and environment, you may want to create a virtual environment first, or use the <code>--user</code> option, or use <a href="https://pipx.pypa.io/">pipx</a> instead of pip.</p>
 <p >However, this method will install only the bare minimum to run PALM-meteo, without documentation and tests, so it is only recommended for experienced users who want a quick installation.</p>
 <h2><a class="anchor" id="method2"></a>
 Method 2: Full in-place installation with a virtual environment</h2>
@@ -126,11 +125,9 @@ Method 3: Advanced installation for developers</h2>
 </ol>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Testing</h2>
-<p >PALM-meteo comes with integration tests supplied. When installed using <a class="el" href="index.html#method2">Method 2</a>, the install script performs the tests at the end of a successful instalation. You may also exectute them at any time from the PALM-meteo install directory using the command</p>
-<div class="fragment"><div class="line">tests/integration_tests/all_tests.sh</div>
-</div><!-- fragment --><p >or for indivudal tests:</p>
-<div class="fragment"><div class="line">tests/integration_tests/test_XX_NAMEOFTEST.sh</div>
-</div><!-- fragment --><p >You may also examine the directory <code>tests/integration_tests/simple_wrf</code> as a reference WRF case for PALM-meteo.</p>
+<p >PALM-meteo comes with integration tests supplied. When installed using <a class="el" href="index.html#method2">Method 2</a>, the install script performs the tests at the end of a successful instalation. You may also exectute them at any time from the PALM-meteo install directory using the command </p><pre class="fragment">tests/integration_tests/all_tests.sh
+</pre><p> or for indivudal tests: </p><pre class="fragment">tests/integration_tests/test_XX_NAMEOFTEST.sh
+</pre><p> You may also examine the directory <code>tests/integration_tests/simple_wrf</code> as a reference WRF case for PALM-meteo.</p>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Usage</h1>
 <p >For each dynamic driver, a <em>YAML</em> configuration file needs to be prepared (typically one per case, although it is possible to combine more files). This file uses sensible defaults for most options, so it does not need to be very long, as is demonstrated by the supplied file <code>example.yaml</code>. However for the beginners it is best to start by making a copy of the file <code>template.yaml</code>, which contains all user-selectable options with their defaults and documentation, and modifying it accordingly. See <a class="el" href="md_docs_pages_configuration.html">PALM-meteo configuration</a>.</p>
@@ -149,9 +146,8 @@ Basic model configuration</h2>
 <p >When the specified task(s) are selected, the task configuration mechanism enables the required plugins and pulls in the respective task-specific configuration defauls, which may be overwritten within the configuration file.</p>
 <h2><a class="anchor" id="autotoc_md10"></a>
 Running the model</h2>
-<p >With a prepared configuration file such as <code>myconfig.yaml</code>, simply run</p>
-<div class="fragment"><div class="line">./pmeteo -c myconfig.yaml</div>
-</div><!-- fragment --><p >in the project directory. See <a class="el" href="md_docs_pages_running.html">Running PALM-meteo</a> for more information.</p>
+<p >With a prepared configuration file such as <code>myconfig.yaml</code>, simply run </p><pre class="fragment">./pmeteo -c myconfig.yaml
+</pre><p> in the project directory. See <a class="el" href="md_docs_pages_running.html">Running PALM-meteo</a> for more information.</p>
 <h1><a class="anchor" id="autotoc_md11"></a>
 Extending PALM-meteo</h1>
 <p >In order to add new input types or processing methods, PALM-meteo can be easily extended with user plugins. For documentation, see the <a class="el" href="md_docs_pages_extending.html">Developer guide</a>.</p>
