@@ -155,6 +155,10 @@ Configuration options</h1>
 <div class="line"> </div>
 <div class="line">    #check_mass_balance: false #re-verify final mass balance after balancing</div>
 <div class="line"> </div>
+<div class="line">intermediate_files:</div>
+<div class="line">    #after a successful stage, delete the intermediate file from the previous stage</div>
+<div class="line">    delete_after_success: false</div>
+<div class="line"> </div>
 <div class="line">domain:</div>
 <div class="line">    #dz: #default=dx</div>
 <div class="line">    nz: #required</div>
@@ -293,7 +297,17 @@ Configuration options</h1>
 <div class="line">cams:</div>
 <div class="line"> </div>
 </div><!-- fragment --><p >This file may be used as a template for a new PALM-meteo configuration by uncommenting the values that the user wants to change.</p>
-<p >Any valid options not listed in the file <code>template.yaml</code> are intended for developers only. </p>
+<p >Any valid options not listed in the file <code>template.yaml</code> are intended for developers only.</p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+Specifying paths</h2>
+<p >The option <code>paths.base</code> specifies the base path for all other paths. It may be either an absolute path or a path relative to the current directory (the directory from which PALM-meteo was started). All other paths are either absolute or relative to <code>paths.base</code>.</p>
+<p >Any path option may contain <b>replacement strings</b> in curly braces. These are used to simplify the specification of typical paths. For example, the string <code>{domain}</code> is (by default) replaced either with <code>_N02</code>, <code>_N03</code> etc. or with an empty string for domain number 1, so that it represents a typical file suffix for PALM input and output files (such as the dynamic or static driver).</p>
+<p >Even the replacement strings may be customized using the configuration section <code>path_strings:</code>; each item specifies a Python expression which gets evaluated as a replacement string and it may reference other configuration options.</p>
+<p >The default configuration of paths expects a typical PALM setup: the <code>JOBS</code> directory placed next to the PALM-meteo instalation directory, within which there are input and output files for individual jobs. Apart from PALM's standard per-job subdirectories such as <code>INPUT</code>, PALM-meteo adds the subdirectory <code>METEO</code> with its intermediate files. In addition to that, some standard plugins expect other directories with their inputs (such as the <code>WRF</code> directory with WRFOUT files, unless configured otherwise).</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Specifying time durations</h2>
+<p >The configuration options which expect duration (not absolute time), such as <code>simulation.length</code> and <code>simulation.timestep</code>, are specified as a number and unit, which is one of: <code>d</code> (days), <code>h</code> (hours), <code>m</code> (minutes) or <code>s</code> (seconds).</p>
+<p >The number and unit are separated by space(s). You may also use decimal numbers or combine multiple units, so the string <code>1 d 3.5 h</code> translates to 27.5 hours. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

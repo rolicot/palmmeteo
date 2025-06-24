@@ -113,7 +113,7 @@ Method 2: Full in-place installation with a virtual environment</h2>
 <p >This is the recommended method for most users.</p>
 <ol type="1">
 <li>Make sure that you have python3, pip, and python-venv installed and available. This is operating system dependent.</li>
-<li>Download and extract PALM-meteo into a directory of your choice. If you have already installed the PALM model system, then PALM-meteo is already extracted under <code>packages/dynamic_driver/palm_meteo</code>, albeit probably not in the newest version. Or you can download PALM-meteo from the <a href="https://gitlab.palm-model.org/dynamic_driver/palm_meteo">PALM gitlab server</a> or from <a href="https://github.com/rolicot/palmmeteo/releases">GitHub</a>.</li>
+<li>Download and extract PALM-meteo into a directory of your choice. If you have already installed the PALM model system, then PALM-meteo is already extracted under <code>packages/dynamic_driver/palm_meteo</code>, albeit probably not in the newest version. Or you can download PALM-meteo from the <a href="https://gitlab.palm-model.org/dynamic_driver/palm_meteo">PALM gitlab server</a> or from <a href="https://github.com/PALM-tools/palmmeteo/releases">GitHub</a>.</li>
 <li>From within the PALM-meteo install directory, run <code>./setup</code>. This will create a new virtual environment, install PALM-meteo with all dependencies and create a symlink to the <code>pmeteo</code> command (which enables the virtual environment automatically).</li>
 </ol>
 <h2><a class="anchor" id="autotoc_md6"></a>
@@ -138,7 +138,7 @@ Basic model configuration</h2>
 <ul>
 <li><code>wrf</code>: Create IBC from WRF model outputs.</li>
 <li><code>wrf_rad</code>: Create PALM radiation inputs from WRF model outputs (typically <em>AUXHIST</em> outputs with potentially different time step from standard <em>WRFOUT</em>).</li>
-<li><code>icon2</code>: Create IBC from ICON outputs in the <em>NetCDF</em> format.</li>
+<li><code>icon</code>: Create IBC from ICON outputs in the <em>NetCDF</em> format.</li>
 <li><code>aladin</code>: Create IBC from Aladin outputs in the <em>grib</em> format.</li>
 <li><code>camx</code>: Create chemistry IBC from CAMx model outputs.</li>
 <li><code>cams</code>: Create chemistry IBC from CAMS model outputs.</li>
