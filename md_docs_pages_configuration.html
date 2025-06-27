@@ -293,8 +293,22 @@ Configuration options</h1>
 <div class="line">    # horizontal gradients. Sigma value in grid points.</div>
 <div class="line">    #terrain_smoothing: off</div>
 <div class="line"> </div>
-<div class="line"> </div>
 <div class="line">cams:</div>
+<div class="line"> </div>
+<div class="line">winddamp:</div>
+<div class="line">    # Distance in number of grid cells from the wall which have some wind</div>
+<div class="line">    # damping. Cells further from the wall will have no damping.</div>
+<div class="line">    #damping_dist: 2</div>
+<div class="line"> </div>
+<div class="line">    # Distance in number of grid cells from the wall which are damped to zero.</div>
+<div class="line">    # The next cells further from the wall have a damping factor which</div>
+<div class="line">    # increases linearly to 1.</div>
+<div class="line">    #num_zeroed: 1</div>
+<div class="line"> </div>
+<div class="line">    # Method of staggering the damping factor for the U, V and W wind</div>
+<div class="line">    # components by taking adjacent cells in the respective dimension.</div>
+<div class="line">    #stagger_method: average</div>
+<div class="line">    #stagger_method: minimum</div>
 <div class="line"> </div>
 </div><!-- fragment --><p >This file may be used as a template for a new PALM-meteo configuration by uncommenting the values that the user wants to change.</p>
 <p >Any valid options not listed in the file <code>template.yaml</code> are intended for developers only.</p>

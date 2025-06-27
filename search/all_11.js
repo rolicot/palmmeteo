@@ -18,7 +18,7 @@ var searchData=
   ['required_5fvariables_15',['required_variables',['../namespacepalmmeteo__stdplugins_1_1meteo.html#ae6c5b92956272c3eb123353e7c5e76f1',1,'palmmeteo_stdplugins::meteo']]],
   ['requires_16',['Requires',['../classpalmmeteo__stdplugins_1_1meteo_1_1EmisPlugin_1_1Requires.html',1,'palmmeteo_stdplugins::meteo::EmisPlugin']]],
   ['requiresmeteopluginmixin_17',['RequiresMeteoPluginMixin',['../classpalmmeteo__stdplugins_1_1meteo_1_1RequiresMeteoPluginMixin.html',1,'palmmeteo_stdplugins::meteo']]],
-  ['rt_18',['rt',['../classpalmmeteo_1_1plugins_1_1Plugin.html#a369b93f496e626f36d02086aa08fe59d',1,'palmmeteo.plugins.Plugin.rt()'],['../namespacepalmmeteo_1_1runtime.html#aba9a3ecf2eb61be9d2e29032c58c4d89',1,'palmmeteo.runtime.rt()']]],
+  ['rt_18',['rt',['../namespacepalmmeteo_1_1runtime.html#aba9a3ecf2eb61be9d2e29032c58c4d89',1,'palmmeteo::runtime']]],
   ['run_19',['run',['../namespacepalmmeteo_1_1dispatch.html#a994932c3c1f72c466b043e8ce1d894f5',1,'palmmeteo::dispatch']]],
   ['running_20palm_2dmeteo_20',['Running PALM-meteo',['../md_docs_pages_running.html',1,'']]],
   ['running_2emd_21',['running.md',['../running_8md.html',1,'']]],

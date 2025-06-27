@@ -70,24 +70,31 @@ $(function() {
 </pre><p> as long as the virtual environment (if used) is enabled.</p>
 <p >Finally, as a backup option if neither of the scripts is installed, the <code>palmmeteo</code> Python module can be executed using </p><pre class="fragment">python3 -m palmmeteo {OPTIONS}
 </pre><p> Here is the complete list of command line options:</p>
-<pre class="fragment">usage: pmeteo [-h] -c CONFIG [CONFIG ...] [-w STAGE] [-W STAGE] [--version]
-              [-v | -s]
+<pre class="fragment">usage: pmeteo [-h] -c CONFIG [CONFIG ...] [-f STAGE] [-t STAGE]
+              [-w STAGE [STAGE ...]] [--version] [-v | -s]
 
-PALM-meteo: processor of meteorological input data for the PALM model system
+PALM-meteo: processor of meteorological input data for the PALM model system.
 Creates PALM dynamic driver from various sources.
 
 options:
   -h, --help            show this help message and exit
   -c CONFIG [CONFIG ...], --config CONFIG [CONFIG ...]
                         configuration file(s)
-  -w STAGE, --workflow-from STAGE
+  -f STAGE, --workflow-from STAGE
                         start workflow at STAGE
-  -W STAGE, --workflow-to STAGE
+  -t STAGE, --workflow-to STAGE
                         stop workflow at STAGE
+  -w STAGE [STAGE ...], --workflow STAGE [STAGE ...]
+                        execute listed stages
   --version             show program's version number and exit
   -v, --verbose         increase verbosity
   -s, --silent          print only errors
-</pre> </div></div><!-- contents -->
+</pre><h1><a class="anchor" id="autotoc_md28"></a>
+Running a subset of stages</h1>
+<p >To generate the PALM dynamic driver, all stages of the workflow need to be executed sequentially, which is the default. PALM-meteo also fully supports stopping the execution after any stage and restarting it from the next stage later (even on a different machine, if you transfer the intermediate and snapshot files, which are placed in the <code>METEO</code> directory by default).</p>
+<p >If the execution of any stage crashes for some reason (e.g. power loss, insufficient disk space, bug in the code for which you have a fix), you may also restart it safely. It is also fully supported to restart from any stage which was already performed, unless the snapshot from the previous stage was deleted (configuration option <code>intermediate_files:delete_after_success</code>, off by default).</p>
+<p >Advanced users may also attempt other usage patterns, such as restarting from a later stage after changing the configuration. However, the success of this approach depends on the support by the involved plugins. If the configuration has been changed, it is advisable to include the first stage <code>check_config</code> and potentially also the second stage <code>setup_model</code> at the beginning. The remaining stages should always form a continuous string because the main model data can only be transferred between adjacent stages. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
